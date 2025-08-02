@@ -1,0 +1,216 @@
+{
+  "info": {
+    "name": "Telemedicine Backend API",
+    "_postman_id": "abc123-telemed-collection",
+    "description": "Postman Collection for testing Telemedicine APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Doctor - Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Dr. Strange\",\n  \"email\": \"strange@example.com\",\n  \"password\": \"secure123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/doctors/register",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "doctors",
+            "register"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Doctor - Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"strange@example.com\",\n  \"password\": \"secure123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/doctors/login",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "doctors",
+            "login"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Doctor - Toggle Availability",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Cookie",
+            "value": "token=<your_token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/doctors/availability",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "doctors",
+            "availability"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Doctor - Get Online Doctors",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/api/doctors/onlinedr",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "doctors",
+            "online"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Device - Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"deviceId\": \"pharma-001\",\n  \"location\": \"Delhi, India\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/devices/add",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "devices",
+            "register"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Session - Start",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"deviceId\": \"pharma-001\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/sessions/start",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "sessions",
+            "start"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Session - Active",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Cookie",
+            "value": "token=<your_token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/sessions/active",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "sessions",
+            "active"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Session - End",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sessionId\": \"<replace_with_session_id>\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/sessions/end",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "sessions",
+            "end"
+          ]
+        }
+      }
+    }
+  ]
+}
